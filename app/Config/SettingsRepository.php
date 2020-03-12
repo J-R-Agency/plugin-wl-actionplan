@@ -429,6 +429,13 @@ class SettingsRepository
 				'icon_class' => apply_filters('favorites/button/icon-class', 'sf-icon-wishlist', 'wishlist'),
 				'state_default' => apply_filters('favorites/button/text/default', __('Add to Wishlist', 'favorites'), 'wishlist'),
 				'state_active' => apply_filters('favorites/button/text/active', __('Added to Wishlist', 'favorites'), 'wishlist')
+			],
+			'actionplan' => [
+				'label' => __('Action Plan', 'favorites'),
+				'icon' => apply_filters('favorites/button/icon', '<i class="sf-icon-wishlist"></i>', 'actionplan'),
+				'icon_class' => apply_filters('favorites/button/icon-class', 'sf-icon-wishlist', 'actionplan'),
+				'state_default' => apply_filters('favorites/button/text/default', __('Add to Action Plan', 'favorites'), 'actionplan'),
+				'state_active' => apply_filters('favorites/button/text/active', __('Added to Action Plan', 'favorites'), 'actionplan')
 			]
 		];
 		if ( $button == 'all' ) return $buttons;

@@ -46,7 +46,7 @@ function favorites_check_versions( $wp = '3.9', $php = '5.3.2' ) {
         deactivate_plugins( basename( __FILE__ ) );
     }
     
-    wp_die('<p>The <strong>Favorites</strong> plugin requires'.$flag.'  version '.$version.' or greater.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>TRUE ) );
+    wp_die('<p>The <strong>Action Plan</strong> plugin requires'.$flag.'  version '.$version.' or greater.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>TRUE ) );
 }
 
 if( !class_exists('Bootstrap') ) :

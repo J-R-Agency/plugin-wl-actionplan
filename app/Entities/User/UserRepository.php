@@ -154,6 +154,8 @@ class UserRepository
 	{
 		if ( !isset($_SESSION['simplefavorites']) ) $_SESSION['simplefavorites'] = [];
 		$favorites = $_SESSION['simplefavorites'];
+		print_r($favorites);
+
 		$favorites = $this->favoritesWithSiteID($favorites);
 		$favorites = $this->favoritesWithGroups($favorites);
 		if ( !is_null($site_id) && is_null($group_id) ) $favorites = Helpers::pluckSiteFavorites($site_id, $favorites);

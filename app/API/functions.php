@@ -257,3 +257,34 @@ function the_total_favorites_count($site_id = null)
 {
 	echo get_total_favorites_count($site_id);
 }
+
+
+
+
+// Custom functions for Wellbeing Liverpool
+// Greg Macoy 13/04/20
+
+/**
+* Proof of concept
+* @return html
+*/
+function wl_print_goal(){
+	echo "<h2>Action Plan Goal</h2>";
+	echo "<div class=\"wl_goal\">RETURN GOAL FROM COOKIE</div>";
+}
+/**
+* Proof of concept
+* @return html
+*/
+function wl_return_goal(){
+	$goal = "<h2>Action Plan Goal</h2>";
+	$goal .= "<div class=\"wl_goal\">RETURN GOAL FROM COOKIE</div>";
+	return $goal ;
+}
+
+
+
+
+
+
+

@@ -168,6 +168,7 @@ class UserRepository
 	{
 		if ( !isset($_COOKIE['simplefavorites']) ) $_COOKIE['simplefavorites'] = json_encode([]);
 		$favorites = json_decode(stripslashes($_COOKIE['simplefavorites']), true);
+		print_r($favorites);
 		$favorites = $this->favoritesWithSiteID($favorites);
 		$favorites = $this->favoritesWithGroups($favorites);
 		if ( isset($_POST['user_consent_accepted']) && $_POST['user_consent_accepted'] == 'true' ) $favorites[0]['consent_provided'] = time();

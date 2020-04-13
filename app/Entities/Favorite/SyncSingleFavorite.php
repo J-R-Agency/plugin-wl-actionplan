@@ -51,6 +51,13 @@ class SyncSingleFavorite
 	*/
 	public function cookie()
 	{
+
+		// PROOF OF CONCEPT
+		// GREG MACOY
+		$cookie_name = "wl_goal";
+		$cookie_value = "Live a happier life";
+		setcookie($cookie_name, $cookie_value, time() + apply_filters( 'simplefavorites_cookie_expiration_interval', 31556926 ), "/");
+
 		if ( $this->user->isFavorite($this->post_id, $this->site_id) ){
 			$favorites = $this->removeFavorite();
 			setcookie( 'simplefavorites', json_encode( $favorites ), time() + apply_filters( 'simplefavorites_cookie_expiration_interval', 31556926 ), '/' );

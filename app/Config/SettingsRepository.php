@@ -143,7 +143,7 @@ class SettingsRepository
 			return apply_filters('favorites/authentication_modal_content', $content);
 		}
 		$html = '<p>' . __('Please login to add favorites.', 'favorites') . '</p>';
-		$html .= '<p><a href="#" data-favorites-modal-close>' . __('Dismiss this notice', 'favorites') . '</a></p>';
+		$html .= '<p><a class="authenticationModalContent" href="#" data-favorites-modal-close>' . __('Dismiss this notice', 'favorites') . '</a></p>';
 		return $html;
 	}
 

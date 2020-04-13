@@ -85,7 +85,7 @@ class FavoriteListingPresenter
 	{
 		$this->html = str_replace('[post_title]', get_the_title($this->favorite), $this->html);
 		$this->html = str_replace('[post_permalink]', get_permalink($this->favorite), $this->html);
-		$this->html = str_replace('[permalink]', '<a href="' . get_permalink($this->favorite) . '">', $this->html);
+		$this->html = str_replace('[permalink]', '<a class="replacePostFields" href="' . get_permalink($this->favorite) . '">', $this->html);
 		$this->html = str_replace('[/permalink]', '</a>', $this->html);
 		$this->html = str_replace('[post_excerpt]', $this->getPostExcerpt(), $this->html);
 		$this->html = str_replace('[post_content]', get_the_content($this->favorite), $this->html);

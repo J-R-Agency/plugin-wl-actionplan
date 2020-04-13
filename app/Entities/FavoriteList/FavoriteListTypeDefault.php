@@ -18,7 +18,7 @@ class FavoriteListTypeDefault extends FavoriteListTypeBase
 		$template = '';
 		if ( $this->list_options->include_thumbnails ) $template .= '[post_thumbnail_' . $this->list_options->thumbnail_size . ']';
 		$template .= "\n\n";
-		if ( $this->list_options->include_links )  $template .= '<a href="[post_permalink]">';
+		if ( $this->list_options->include_links )  $template .= '<a class="setTemplate" href="[post_permalink]">';
 		$template .= '[post_title]';
 		if ( $this->list_options->include_links ) $template .= '</a>';
 		$template .= "\n\n";

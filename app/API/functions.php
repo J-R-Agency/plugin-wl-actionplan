@@ -279,6 +279,11 @@ function wl_print_goal(){
 function wl_return_goal(){
 	$goal = "<h2>Action Plan Goal</h2>";
 	$goal .= "<div class=\"wl_goal\">RETURN GOAL FROM COOKIE</div>";
+	$goal .= "<div class=\"wl_goal\">" . $_COOKIE["wl_goal"] . "</div>";
+	$goal .= "<div class=\"wl_step_one\">" . $_COOKIE["wl_step_one"] . "</div>";
+	$goal .= "<div class=\"wl_step_two\">" . $_COOKIE["wl_step_two"] . "</div>";
+	$goal .= "<div class=\"wl_step_three\">" . $_COOKIE["wl_step_three"] . "</div>";
+	$goal .= "<div class=\"wl_goal\">" . $_COOKIE["wl_notes"] . "</div>";
 	return $goal ;
 }
 

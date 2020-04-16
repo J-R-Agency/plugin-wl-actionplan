@@ -54,7 +54,8 @@ class FavoriteListingPresenter
 	private function listingOpening()
 	{
 		$css = apply_filters('favorites/list/listing/css', $this->list_options->listing_css, $this->list_options);
-		$this->html = '<h2>listingOpening</h2>';
+		// $this->html = '<h2>listingOpening</h2>';
+		$this->html = '';
 		$this->html .= '<' . $this->list_options->listing_type;
 		$this->html .= ' data-postid="' . $this->favorite . '" class="' . $css . '">';
 	}

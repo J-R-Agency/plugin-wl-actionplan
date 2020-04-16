@@ -292,11 +292,11 @@ function wl_return_goal(){
 
 	echo $wl_steps_list[0] ;
 
-	if ( isset( $_COOKIE["wl_step_one"] ) ) { $goal = "<li>" . $_COOKIE["wl_step_one"]  . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_two"] ) ) { $goal = "<li>" . $_COOKIE["wl_step_two"]  . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_three"] ) ) { $goal = "<li>" . $_COOKIE["wl_step_three"]  . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_four"] ) ) { $goal = "<li>" . $_COOKIE["wl_step_four"]  . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_five"] ) ) { $goal = "<li>" . $_COOKIE["wl_step_five"]  . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_one"] ) ) { $goal .= "<li>" . $_COOKIE["wl_step_one"]  . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_two"] ) ) { $goal .= "<li>" . $_COOKIE["wl_step_two"]  . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_three"] ) ) { $goal .= "<li>" . $_COOKIE["wl_step_three"]  . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_four"] ) ) { $goal .= "<li>" . $_COOKIE["wl_step_four"]  . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_five"] ) ) { $goal .= "<li>" . $_COOKIE["wl_step_five"]  . "</li>"; }
 
 	echo $wl_steps_list[1] ;
 

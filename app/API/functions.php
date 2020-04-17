@@ -300,7 +300,7 @@ function wl_return_goal(){
 
 	$goal .= $wl_steps_list[1] ;
 
-	$goal .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a>";
+	$goal .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div>";
 
 	return $goal ;
 }

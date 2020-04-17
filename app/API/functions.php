@@ -300,7 +300,9 @@ function wl_return_goal(){
 
 	$goal .= $wl_steps_list[1] ;
 
-	$goal .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
+	if ( isset( $_COOKIE["wl_goal"] ) ) { 
+		$goal .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
+	}
 
 	return $goal ;
 }

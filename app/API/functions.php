@@ -299,7 +299,7 @@ function wl_return_goal(){
 		$wl_steps_list[1] = "" ; 
 	}
 
-	$display_steps .= $wl_steps_list[0] ;
+	$display_steps = $wl_steps_list[0] ;
 
 	if ( isset( $_COOKIE["wl_step_one"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_one"] ) . "</li>"; }
 	if ( isset( $_COOKIE["wl_step_two"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_two"] ) . "</li>"; }
@@ -310,7 +310,7 @@ function wl_return_goal(){
 	$display_steps .= $wl_steps_list[1] ;
 
 	if ( isset( $_COOKIE["wl_goal"] ) ) { 
-		$display_button .= "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
+		$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
 	}
 
 	$wl_return_goal = $display_goal . $display_steps . $display_button ;

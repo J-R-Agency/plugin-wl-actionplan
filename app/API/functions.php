@@ -283,9 +283,13 @@ function wl_print_goal(){
 */
 function wl_return_goal(){
 
-	$goal = "";
+	$wl_return_goal = "";
+
+	$display_goal = "";
+	$display_steps = "";
+	$display_button = "";
 	
-	if ( isset( $_COOKIE["wl_goal"] ) ) { $goal = "<h2>" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
+	if ( isset( $_COOKIE["wl_goal"] ) ) { $display_goal = "<h2>" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
 
 	if ( isset( $_COOKIE["wl_step_one"] ) || isset( $_COOKIE["wl_step_two"] ) || isset( $_COOKIE["wl_step_three"] ) || isset( $_COOKIE["wl_goal"] ) || isset( $_COOKIE["wl_goal"] ) ) { 
 		$wl_steps_list[0] = "<ul class=\"wl_steps_list\">" ; 
@@ -295,21 +299,23 @@ function wl_return_goal(){
 		$wl_steps_list[1] = "" ; 
 	}
 
-	$goal .= $wl_steps_list[0] ;
+	$display_steps .= $wl_steps_list[0] ;
 
-	if ( isset( $_COOKIE["wl_step_one"] ) ) { $goal .= "<li>" . stripslashes( $_COOKIE["wl_step_one"] ) . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_two"] ) ) { $goal .= "<li>" . stripslashes( $_COOKIE["wl_step_two"] ) . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_three"] ) ) { $goal .= "<li>" . stripslashes( $_COOKIE["wl_step_three"] ) . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_four"] ) ) { $goal .= "<li>" . stripslashes( $_COOKIE["wl_step_four"] ) . "</li>"; }
-	if ( isset( $_COOKIE["wl_step_five"] ) ) { $goal .= "<li>" . stripslashes( $_COOKIE["wl_step_five"] ) . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_one"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_one"] ) . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_two"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_two"] ) . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_three"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_three"] ) . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_four"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_four"] ) . "</li>"; }
+	if ( isset( $_COOKIE["wl_step_five"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_five"] ) . "</li>"; }
 
-	$goal .= $wl_steps_list[1] ;
+	$display_steps .= $wl_steps_list[1] ;
 
 	if ( isset( $_COOKIE["wl_goal"] ) ) { 
-		$goal .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
+		$display_button .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
 	}
 
-	return $goal ;
+	$wl_return_goal = $display_goal . $display_steps . $display_button ;
+
+	return $wl_return_goal ;
 }
 
 

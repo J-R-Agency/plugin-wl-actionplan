@@ -289,10 +289,10 @@ function wl_return_goal(){
 	$display_steps = "";
 	$display_button = "";
 	
-	if ( isset( $_COOKIE["wl_goal"] ) ) { $display_goal = "<h2>" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
+	if ( isset( $_COOKIE["wl_goal"] ) ) { $display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
 
 	if ( isset( $_COOKIE["wl_step_one"] ) || isset( $_COOKIE["wl_step_two"] ) || isset( $_COOKIE["wl_step_three"] ) || isset( $_COOKIE["wl_goal"] ) || isset( $_COOKIE["wl_goal"] ) ) { 
-		$wl_steps_list[0] = "<ul class=\"wl_steps_list\">" ; 
+		$wl_steps_list[0] = "<ul class=\"wl_steps_list display_steps\">" ; 
 		$wl_steps_list[1] = "</ul>" ; 
 	} else {
 		$wl_steps_list[0] = "" ; 
@@ -310,7 +310,7 @@ function wl_return_goal(){
 	$display_steps .= $wl_steps_list[1] ;
 
 	if ( isset( $_COOKIE["wl_goal"] ) ) { 
-		$display_button .= "<div class=\"wl_btn_action_plan\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
+		$display_button .= "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities</h3>";
 	}
 
 	$wl_return_goal = $display_goal . $display_steps . $display_button ;

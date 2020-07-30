@@ -133,7 +133,7 @@ function the_user_favorites_list($user_id = null, $site_id = null, $include_link
 	echo "<li>$include_links</li>";
 	echo "</ul>";
 	*/
-	echo get_user_favorites_list($user_id, $site_id, $include_links, $filters, $include_button, $include_thumbnails, $thumbnail_size, $include_excerpt);
+	//echo get_user_favorites_list($user_id, $site_id, $include_links, $filters, $include_button, $include_thumbnails, $thumbnail_size, $include_excerpt);
 }
 
 

@@ -125,11 +125,14 @@ function get_user_favorites_list($user_id = null, $site_id = null, $include_link
 */
 function the_user_favorites_list($user_id = null, $site_id = null, $include_links = false, $filters = null, $include_button = false, $include_thumbnails = false, $thumbnail_size = 'thumbnail', $include_excerpt = false)
 {
+	
+	/*
 	echo "<ul>";
 	echo "<li>$user_id</li>";
 	echo "<li>$site_id</li>";
 	echo "<li>$include_links</li>";
 	echo "</ul>";
+	*/
 	echo get_user_favorites_list($user_id, $site_id, $include_links, $filters, $include_button, $include_thumbnails, $thumbnail_size, $include_excerpt);
 }
 

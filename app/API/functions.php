@@ -317,7 +317,7 @@ function wl_return_goal(){
 	$display_steps .= $wl_steps_list[1] ;
 
 	if ( isset( $_COOKIE["wl_goal"] ) ) { 
-		$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities " . $goal_counter . " </h3>";
+		$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities " . $goal_counter . " " . mt_rand() . " </h3>";
 	}
 
 	$wl_return_goal = chr(10) . "<!-- Action Plan Goal -->" . $display_goal . $display_steps . $display_button . chr(10) . "<!-- / Action Plan Goal -->" ;

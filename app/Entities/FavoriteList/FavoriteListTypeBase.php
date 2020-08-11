@@ -104,7 +104,7 @@ abstract class FavoriteListTypeBase
 		$css = apply_filters('favorites/list/wrapper/css', $this->list_options->wrapper_css, $this->list_options);
 		// $out = '<h2>listOpening (FavoriteListTypeBase)</h2>';
 		$out = "xxxGMxxx";
-		$out .= "oooGMoo";
+		$out .= "oooGMooo";
 		$out .= wl_return_goal();
 		$out .= "ooo/GMooo";
 		$out .= '<' . $this->list_options->wrapper_type;

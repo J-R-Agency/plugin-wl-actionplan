@@ -103,7 +103,7 @@ abstract class FavoriteListTypeBase
 	{
 		$css = apply_filters('favorites/list/wrapper/css', $this->list_options->wrapper_css, $this->list_options);
 		// $out = '<h2>listOpening (FavoriteListTypeBase)</h2>';
-		$out = "";
+		$out = "xxxGMxxx";
 		$out .= wl_return_goal();
 		$out .= '<' . $this->list_options->wrapper_type;
 		$out .= ' class="favorites-list ' . $css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
@@ -114,7 +114,7 @@ abstract class FavoriteListTypeBase
 		$out .= ' data-thumbnailsize="' . $this->list_options->thumbnail_size . '"';
 		$out .= ' data-nofavoritestext="' . $this->list_options->no_favorites . '"';
 		$out .= ' data-posttypes="' . $this->list_options->post_types . '"';
-		$out .= '>';
+		$out .= '>xxx/GMxxx';
 		return $out;
 	}
 
@@ -132,11 +132,13 @@ abstract class FavoriteListTypeBase
 	protected function noFavorites()
 	{
 		if ( !empty($this->favorites) ) return;
-		$out = $this->listOpening();
+		$out = "...GM...";
+		$out .= $this->listOpening();
 		$out .= '<' . $this->list_options->wrapper_type;
 		$out .= ' data-postid="0" data-nofavorites class="no-favorites">' . $this->list_options->no_favorites;
 		$out .= '</' . $this->list_options->wrapper_type . '>';
 		$out .= $this->listClosing();
+		$out .= ".../GM...";
 		return $out;
 	}
 

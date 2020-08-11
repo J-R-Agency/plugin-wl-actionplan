@@ -297,6 +297,8 @@ function wl_return_goal(){
 
 	if ( is_null ( $wl_repeat_check ) ) {
 
+		echo "REPEAT CHECK: " .  $wl_repeat_check ;
+		
 		$goal_counter = $goal_counter + 1 ;
 
 		$wl_return_goal = "";

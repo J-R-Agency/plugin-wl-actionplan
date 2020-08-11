@@ -104,7 +104,9 @@ abstract class FavoriteListTypeBase
 		$css = apply_filters('favorites/list/wrapper/css', $this->list_options->wrapper_css, $this->list_options);
 		// $out = '<h2>listOpening (FavoriteListTypeBase)</h2>';
 		$out = "xxxGMxxx";
+		$out .= "oooGMoo";
 		$out .= wl_return_goal();
+		$out .= "ooo/GMooo";
 		$out .= '<' . $this->list_options->wrapper_type;
 		$out .= ' class="favorites-list ' . $css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
 		$out .= ( $this->list_options->include_button ) ? 'data-includebuttons="true"' : 'data-includebuttons="false"';

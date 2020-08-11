@@ -287,6 +287,7 @@ function wl_print_goal(){
 function wl_return_goal(){
 
 	global $goal_counter;
+	global $wl_return_goal;
 
 	$goal_counter = $goal_counter + 1 ;
 

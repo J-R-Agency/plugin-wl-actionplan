@@ -291,8 +291,8 @@ function wl_return_goal(){
 	global $wl_repeat_check;
 	global $wl_repeat_store;
 
-	$wl_repeat_check = null;
-	$wl_repeat_store = null; 
+	// $wl_repeat_check = null;
+	// $wl_repeat_store = null; 
 
 
 	if ( is_null ( $wl_repeat_check ) ) {

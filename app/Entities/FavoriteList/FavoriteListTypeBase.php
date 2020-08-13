@@ -134,13 +134,13 @@ abstract class FavoriteListTypeBase
 	protected function noFavorites()
 	{
 		if ( !empty($this->favorites) ) return;
-		$out = "...GM...";
-		$out .= $this->listOpening();
+		// $out = "...GM...";
+		$out = $this->listOpening();
 		$out .= '<' . $this->list_options->wrapper_type;
 		$out .= ' data-postid="0" data-nofavorites class="no-favorites">' . $this->list_options->no_favorites;
 		$out .= '</' . $this->list_options->wrapper_type . '>';
 		$out .= $this->listClosing();
-		$out .= ".../GM...";
+		// $out .= ".../GM...";
 		return $out;
 	}
 

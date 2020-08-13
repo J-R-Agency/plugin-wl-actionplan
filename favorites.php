@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Action Plan
-Plugin URI: https://jnragency.co.uk
+Plugin URI: https://matchstickcreative.co.uk
 Description: Action Plan extension for Favorites plugin
-Version: 3.0.0
+Version: 3.1.0
 Author: Kyle Phillips + Greg Macoy
 Author URI: https://github.com/kylephillips
 Text Domain: favorites

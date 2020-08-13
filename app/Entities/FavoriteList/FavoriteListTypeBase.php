@@ -104,9 +104,9 @@ abstract class FavoriteListTypeBase
 		$css = apply_filters('favorites/list/wrapper/css', $this->list_options->wrapper_css, $this->list_options);
 		// $out = '<h2>listOpening (FavoriteListTypeBase)</h2>';
 		$gm_debug = wl_return_goal();
-		$out = "xxxGMxxx";
-		$out .= "oooGMooo SITE ID: " . get_main_site_id() . $gm_debug . "ooo/GMooo";
-		$out .= '<' . $this->list_options->wrapper_type;
+		// $out = "xxxGMxxx";
+		// $out .= "oooGMooo SITE ID: " . get_main_site_id() . $gm_debug . "ooo/GMooo";
+		$out = '<' . $this->list_options->wrapper_type;
 		$out .= ' class="favorites-list ' . $css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
 		$out .= ( $this->list_options->include_button ) ? 'data-includebuttons="true"' : 'data-includebuttons="false"';
 		$out .= ( $this->list_options->include_links ) ? ' data-includelinks="true"' : ' data-includelinks="false"';
@@ -115,7 +115,8 @@ abstract class FavoriteListTypeBase
 		$out .= ' data-thumbnailsize="' . $this->list_options->thumbnail_size . '"';
 		$out .= ' data-nofavoritestext="' . $this->list_options->no_favorites . '"';
 		$out .= ' data-posttypes="' . $this->list_options->post_types . '"';
-		$out .= '>xxx/GMxxx';
+		$out .= '>';
+		// $out .= 'xxx/GMxxx';
 		return $out;
 	}
 

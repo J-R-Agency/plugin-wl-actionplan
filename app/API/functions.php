@@ -269,6 +269,80 @@ function the_total_favorites_count($site_id = null)
 
 
 
+// Custom functions for Wellbeing Liverpool
+// Greg Macoy 13/04/20
+
+/**
+* Proof of concept
+* @return html
+*/
+function wl_print_goal(){
+	echo "<h2>Action Plan Goal</h2>";
+	echo "<div class=\"wl_goal\">RETURN GOAL FROM COOKIE</div>";
+}
+/**
+* Proof of concept
+* @return html
+*/
+function wl_return_goal(){
+
+	global $goal_counter;
+	global $wl_return_goal;
+	global $wl_repeat_check;
+	global $wl_repeat_store;
+
+	// $wl_repeat_check = null;
+	// $wl_repeat_store = null; 
+
+
+	if ( is_null ( $wl_repeat_check ) ) {
+
+		// "REPEAT CHECK: " .  $wl_repeat_check ;
+
+		$goal_counter = $goal_counter + 1 ;
+
+		$wl_return_goal = "";
+
+		$display_goal = "";
+		$display_steps = "";
+		$display_button = "";
+		
+		if ( isset( $_COOKIE["wl_goal"] ) ) { $display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
+
+		if ( isset( $_COOKIE["wl_step_one"] ) || isset( $_COOKIE["wl_step_two"] ) || isset( $_COOKIE["wl_step_three"] ) || isset( $_COOKIE["wl_goal"] ) || isset( $_COOKIE["wl_goal"] ) ) { 
+			$wl_steps_list[0] = "<ul class=\"wl_steps_list display_steps\">" ; 
+			$wl_steps_list[1] = "</ul>" ; 
+		} else {
+			$wl_steps_list[0] = "" ; 
+			$wl_steps_list[1] = "" ; 
+		}
+
+		$display_steps = $wl_steps_list[0] ;
+
+		if ( isset( $_COOKIE["wl_step_one"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_one"] ) . "</li>"; }
+		if ( isset( $_COOKIE["wl_step_two"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_two"] ) . "</li>"; }
+		if ( isset( $_COOKIE["wl_step_three"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_three"] ) . "</li>"; }
+		if ( isset( $_COOKIE["wl_step_four"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_four"] ) . "</li>"; }
+		if ( isset( $_COOKIE["wl_step_five"] ) ) { $display_steps .= "<li>" . stripslashes( $_COOKIE["wl_step_five"] ) . "</li>"; }
+
+		$display_steps .= $wl_steps_list[1] ;
+
+		if ( isset( $_COOKIE["wl_goal"] ) ) { 
+			$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div><h3>Activities " . $goal_counter . " " . mt_rand() . " </h3>";
+		}
+
+		$wl_return_goal = chr(10) . "<!-- Action Plan Goal -->" . $display_goal . $display_steps . $display_button . chr(10) . "<!-- / Action Plan Goal -->" ;
+
+	}
+
+	$wl_repeat_store = mt_rand();
+	$wl_repeat_check = mt_rand();
+
+	return $wl_return_goal ;
+}
+
+
+
 
 
 

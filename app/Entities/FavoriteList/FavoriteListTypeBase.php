@@ -106,7 +106,8 @@ abstract class FavoriteListTypeBase
 		$gm_debug = wl_return_goal();
 		// $out = "xxxGMxxx";
 		// $out .= "oooGMooo SITE ID: " . get_main_site_id() . $gm_debug . "ooo/GMooo";
-		$out = '<' . $this->list_options->wrapper_type;
+		$out = $gm_debug;
+		$out .= '<' . $this->list_options->wrapper_type;
 		$out .= ' class="favorites-list ' . $css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
 		$out .= ( $this->list_options->include_button ) ? 'data-includebuttons="true"' : 'data-includebuttons="false"';
 		$out .= ( $this->list_options->include_links ) ? ' data-includelinks="true"' : ' data-includelinks="false"';

@@ -307,7 +307,11 @@ function wl_return_goal(){
 		$display_steps = "";
 		$display_button = "";
 		
-		if ( isset( $_COOKIE["wl_goal"] ) ) { $display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; }
+		if ( isset( $_COOKIE["wl_goal"] ) ) { 
+			$display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; 
+		} else {
+			$display_goal = "<p>If you would like to set up a wellbeing action plan, start with a clear goal and then add a few steps to help you on your way</p>"
+		}
 
 		if ( isset( $_COOKIE["wl_step_one"] ) || isset( $_COOKIE["wl_step_two"] ) || isset( $_COOKIE["wl_step_three"] ) || isset( $_COOKIE["wl_goal"] ) || isset( $_COOKIE["wl_goal"] ) ) { 
 			$wl_steps_list[0] = "<ul class=\"wl_steps_list display_steps\">" ; 
@@ -329,6 +333,8 @@ function wl_return_goal(){
 
 		if ( isset( $_COOKIE["wl_goal"] ) ) { 
 			$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div>";
+		} else { 
+			$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">Create your Action Plan</a></div>";
 		}
 
 		$wl_return_goal = chr(10) . "<!-- Action Plan Goal -->" . $display_goal . $display_steps . $display_button . chr(10) . "<!-- / Action Plan Goal -->" ;

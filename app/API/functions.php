@@ -306,13 +306,32 @@ function wl_return_goal(){
 		$display_goal = "";
 		$display_steps = "";
 		$display_button = "";
+
+		$no_goal_set_message = get_field('no_goal_set_message', 'option');
+		$action_plan_page_message = get_field('action_plan_page_message', 'option');
 		
 		if ( isset( $_COOKIE["wl_goal"] ) ) { 
 			$display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; 
 		} else {
 			// Default nessage
-			$display_goal = "<p>If you would like to set up an action plan for your wellbeing, start with a clear goal and then add a few steps to help you on your way.</p>";
-				echo get_page_template_slug();
+			$display_goal = "If you would like to set up an action plan for your wellbeing, start with a clear goal and then add a few steps to help you on your way.";
+			if ( get_page_template_slug() == "page-templates/actionplan-page.php"){
+
+				if ( isset( $action_plan_page_message )){
+					$display_goal = $action_plan_page_message;
+					$display_button = "";
+				}
+
+			} else {
+				
+				if ( isset( $no_goal_set_message )){
+					$display_goal = $no_goal_set_message;
+					$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">Create your Action Plan</a></div>";
+				}
+
+			}
+
+			$display_goal = "<div>" . $display_goal . "</div>" ;
 
 		}
 
@@ -336,8 +355,6 @@ function wl_return_goal(){
 
 		if ( isset( $_COOKIE["wl_goal"] ) ) { 
 			$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">View/Edit Action Plan</a></div>";
-		} else { 
-			$display_button = "<div class=\"wl_btn_action_plan display_button\"><a href=\"/action-plan/\">Create your Action Plan</a></div>";
 		}
 
 		$wl_return_goal = chr(10) . "<!-- Action Plan Goal -->" . $display_goal . $display_steps . $display_button . chr(10) . "<!-- / Action Plan Goal -->" ;

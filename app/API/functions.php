@@ -310,7 +310,10 @@ function wl_return_goal(){
 		if ( isset( $_COOKIE["wl_goal"] ) ) { 
 			$display_goal = "<h2 class=\"display_goal\">" . stripslashes( $_COOKIE["wl_goal"] ) . "</h2>"; 
 		} else {
+			// Default nessage
 			$display_goal = "<p>If you would like to set up an action plan for your wellbeing, start with a clear goal and then add a few steps to help you on your way.</p>";
+				echo get_page_template();
+
 		}
 
 		if ( isset( $_COOKIE["wl_step_one"] ) || isset( $_COOKIE["wl_step_two"] ) || isset( $_COOKIE["wl_step_three"] ) || isset( $_COOKIE["wl_goal"] ) || isset( $_COOKIE["wl_goal"] ) ) { 
